@@ -1,0 +1,219 @@
+:root {
+  --site-width: 1024px;
+  --page-bg: #010912;
+  --edge-blue: rgba(28, 91, 139, 0.18);
+  --glow: rgba(70, 160, 240, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(
+      ellipse at center top,
+      rgba(16, 48, 76, 0.28) 0%,
+      rgba(3, 15, 26, 0.18) 35%,
+      #010912 72%
+    ),
+    #010912;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.28) 0%,
+      transparent 18%,
+      transparent 82%,
+      rgba(0, 0, 0, 0.28) 100%
+    );
+}
+
+::selection {
+  background: rgba(84, 166, 255, 0.35);
+}
+
+/* =========================================
+   MAIN PAGE
+   ========================================= */
+
+.page {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*
+  Важливо:
+  сам сайт завжди тримається у своїх рідних 1024px.
+  На великих моніторах він НЕ розтягується,
+  тому графіка залишається чіткою.
+*/
+.visual {
+  position: relative;
+  width: var(--site-width);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0;
+  scroll-margin-top: 1px;
+  background: #020b15;
+  box-shadow:
+    0 0 0 1px var(--edge-blue),
+    0 0 45px var(--glow);
+}
+
+.visual__image {
+  display: block;
+  width: 1024px;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================
+   CLICKABLE AREAS
+   ========================================= */
+
+.hotspot {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  border-radius: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hotspot:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(151, 215, 255, 0.95),
+    0 0 24px rgba(95, 181, 255, 0.6);
+}
+
+/* =========================================
+   HEADER
+   Hero source: 1024 × 552
+   ========================================= */
+
+.hotspot--community {
+  left: 27.6%;
+  top: 4.7%;
+  width: 10.1%;
+  height: 5%;
+}
+
+.hotspot--features-nav {
+  left: 39.1%;
+  top: 4.7%;
+  width: 10.8%;
+  height: 5%;
+}
+
+.hotspot--aion-nav {
+  left: 51.2%;
+  top: 4.7%;
+  width: 7%;
+  height: 5%;
+}
+
+.hotspot--join-nav {
+  left: 58.9%;
+  top: 4.7%;
+  width: 11%;
+  height: 5%;
+}
+
+.hotspot--header-discord {
+  left: 71%;
+  top: 2.7%;
+  width: 14.5%;
+  height: 7.1%;
+}
+
+/* =========================================
+   HERO BUTTONS
+   ========================================= */
+
+.hotspot--hero-discord {
+  left: 29.7%;
+  top: 73.5%;
+  width: 24.8%;
+  height: 11.2%;
+}
+
+.hotspot--hero-more {
+  left: 55.4%;
+  top: 73.5%;
+  width: 14.3%;
+  height: 11.2%;
+}
+
+/* =========================================
+   JOIN SECTION
+   Source: 1024 × 325
+   ========================================= */
+
+.hotspot--join-discord {
+  left: 6.1%;
+  top: 62.1%;
+  width: 25.4%;
+  height: 17.6%;
+}
+
+.hotspot--question {
+  left: 33%;
+  top: 62.1%;
+  width: 15%;
+  height: 17.6%;
+}
+
+/* =========================================
+   TABLET / MOBILE
+   ========================================= */
+
+@media (max-width: 1024px) {
+  body {
+    background: #020b15;
+  }
+
+  .visual {
+    width: 100%;
+    max-width: 1024px;
+    box-shadow: none;
+  }
+
+  .visual__image {
+    width: 100%;
+    max-width: 1024px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .hotspot {
+    border-radius: 6px;
+  }
+}
