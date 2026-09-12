@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://virheon.github.io/greatness-aion2/sitemap.xml
+Sitemap: https://apostall107.github.io/GreatnessAion2UA/sitemap.xml
